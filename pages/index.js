@@ -3,7 +3,7 @@ import MeetupList from '../components/meetups/MeetupList';
 import Head from 'next/head';
 
 export default function Home(props) {
-  console.log('porps', props);
+  //console.log('porps', props);
   return (
     <>
       <Head>
@@ -13,7 +13,7 @@ export default function Home(props) {
           content='Browse a huge list of highly active React meetups!'
         />
       </Head>
-      <MeetupList meetups={propts.meetups} />
+      <MeetupList meetups={props.meetups} />
     </>
   );
 }

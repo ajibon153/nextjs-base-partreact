@@ -6,7 +6,7 @@ export default function Meetup() {
   const router = useRouter();
 
   async function addMeetUpHandler(enteredMeetupData) {
-    console.log('enteredMeetupData', enteredMeetupData);
+    //console.log('enteredMeetupData', enteredMeetupData);
     const response = await fetch('/api/meetups/new-meetup', {
       method: 'POST',
       body: JSON.stringify(enteredMeetupData),
@@ -17,7 +17,7 @@ export default function Meetup() {
 
     const data = await response.json();
 
-    console.log('data', data);
+    //console.log('data', data);
 
     router.push('/');
   }

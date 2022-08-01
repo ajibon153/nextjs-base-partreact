@@ -4,7 +4,7 @@ import { MongoClient } from 'mongodb';
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const data = req.body;
-    console.log('handler sdata', data);
+    //console.log('handler sdata', data);
     const { title, image, address, description } = data;
 
     const client = await MongoClient.connect(
@@ -15,7 +15,7 @@ export default async function handler(req, res) {
     const meetupsCollection = db.collection('meetups');
 
     const result = await meetupsCollection.insertOne(data);
-    console.log('result', result);
+    //console.log('result', result);
 
     client.close();
 

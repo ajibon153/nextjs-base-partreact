@@ -27,10 +27,10 @@ export async function getStaticPaths() {
   let remeetups = meetups.map((meetup) => ({
     params: { meetUpId: meetup._id.toString() },
   }));
-  console.log('remeetups', remeetups);
+  //console.log('remeetups', remeetups);
   client.close();
   return {
-    fallback: false, // lock page data, false=hanya yg ada di list, true=bebas
+    fallback: 'blocking', // lock page data, false=hanya yg ada di list, true=bebas
     paths: remeetups,
   };
 }
@@ -42,16 +42,16 @@ export async function getStaticProps(context) {
     'mongodb+srv://udemy:udemy123@udemy-course.8d1jc.mongodb.net/react-nextsection?retryWrites=true&w=majority'
   );
 
-  console.log('meetUpId', meetUpId);
+  //console.log('meetUpId', meetUpId);
 
   const db = client.db();
   const meetupsCollection = db.collection('meetups');
   const meetupsCollectionarr = await meetupsCollection.find().toArray();
-  console.log('meetupsCollectionarr', meetupsCollectionarr);
+  //console.log('meetupsCollectionarr', meetupsCollectionarr);
   const selectedMeetup = await meetupsCollection.findOne({
     _id: ObjectId(meetUpId),
   });
-  console.log('selectedMeetup', selectedMeetup);
+  //console.log('selectedMeetup', selectedMeetup);
 
   client.close();
 
