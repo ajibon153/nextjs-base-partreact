@@ -1,0 +1,11 @@
+Udemy
+React - The Complete Guide (incl Hooks, React Router, Redux)
+
+Section 23
+Course 316
+
+By: Academind
+Maximilian
+
+Source
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/25616786#overview
